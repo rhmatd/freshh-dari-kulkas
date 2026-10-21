@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C-DFS · Kompetensi Masa Depan</title>
+    <meta name="description" content="C-DFS — platform analitik kompetensi dan future skills.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ================================================================
+    LANDING PAGE
+    ================================================================ -->
+    <div class="landing-container ld" id="landingContainer">
+        <nav class="ld-nav">
+            <a class="ld-brand" href="#ldTop" aria-label="C-DFS beranda">
+                <img src="img/logo-cdfs.png" alt="Logo C-DFS" />
+                <span><strong>C-DFS</strong><small>Competency Driven Future Skills</small></span>
+            </a>
+            <div class="ld-links">
+                <a href="#ldFokus">Fokus</a>
+                <a href="#ldAlur">Cara Kerja</a>
+                <a href="#ldProdi">Jalur</a>
+                <a href="#ldFaq">FAQ</a>
+                <a href="#ldTim">Tim</a>
+            </div>
+            <button class="ld-btn ld-btn-primary" id="landingLoginBtn">Masuk <i class="fa-solid fa-arrow-right"></i></button>
+        </nav>
+
+        <!-- HERO: apa C-DFS dan untuk apa -->
+        <header class="ld-hero" id="ldTop">
+            <div class="ld-hero-text">
+                <span class="ld-eyebrow"><i class="fa-solid fa-graduation-cap"></i> SMART TEAM · Fakultas Vokasi · Universitas Negeri Malang</span>
+                <h1>Kuliah bertahun-tahun, tapi skill-nya <span>belum dicari industri?</span></h1>
+                <p>C-DFS membantu perguruan tinggi dan industri menganalisis kesenjangan kompetensi, memprediksi future skills, serta memberikan rekomendasi kurikulum yang relevan dengan kebutuhan masa depan.</p>
+                <div class="ld-actions">
+                    <button class="ld-btn ld-btn-primary ld-btn-lg ld-go-register"><i class="fa-solid fa-user-plus"></i> Daftar Sekarang</button>
+                    <button class="ld-btn ld-btn-ghost ld-btn-lg ld-go-login"><i class="fa-solid fa-right-to-bracket"></i> Masuk</button>
+                </div>
+                <p class="ld-demo-note">Daftar khusus mahasiswa UM · Perusahaan / sekolah: <a href="#" class="ld-go-mitra">ajukan kemitraan</a></p>
+            </div>
+
+            <!-- Contoh wawasan nyata: sama dengan grafik di Dashboard -->
+            <figure class="ld-insight" aria-label="Contoh wawasan C-DFS">
+                <figcaption>
+                    <strong>Pekerjaan 2025–2030</strong>
+                    <span>Perkiraan perubahan jumlah pekerjaan · WEF</span>
+                </figcaption>
+                <div class="ld-bars">
+                    <div class="ld-bar up"><span>Spesialis Big Data</span><i style="--w:100%"></i><b>+113%</b></div>
+                    <div class="ld-bar up"><span>Spesialis AI &amp; ML</span><i style="--w:73%"></i><b>+82%</b></div>
+                    <div class="ld-bar up"><span>Spesialis IoT</span><i style="--w:37%"></i><b>+42%</b></div>
+                    <div class="ld-bar down"><span>Kasir &amp; Petugas Tiket</span><i style="--w:18%"></i><b>−20%</b></div>
+                    <div class="ld-bar down"><span>Petugas Entri Data</span><i style="--w:23%"></i><b>−26%</b></div>
+                    <div class="ld-bar down"><span>Teller Bank</span><i style="--w:27%"></i><b>−31%</b></div>
+                </div>
+                <p class="ld-insight-foot"><i class="fa-solid fa-circle-info"></i> Di C-DFS, grafik ini disesuaikan dengan program studi Anda.</p>
+            </figure>
+        </header>
+
+        <!-- SEBELUM vs SESUDAH -->
+        <section class="ld-section ld-compare-wrap">
+            <div class="ld-head">
+                <span class="ld-kicker">Masalah yang Kami Selesaikan</span>
+                <h2>Dari "baru tahu saat melamar" menjadi "sudah tahu sejak kuliah"</h2>
+            </div>
+            <div class="ld-compare">
+                <div class="ld-cmp before">
+                    <h3><i class="fa-solid fa-circle-xmark"></i> Tanpa C-DFS</h3>
+                    <ul>
+                        <li>Kurikulum ditinjau berkala, sering tertinggal dari perubahan industri.</li>
+                        <li>Mahasiswa baru sadar ada skill yang kurang saat ditolak lowongan.</li>
+                        <li>Industri sulit menyampaikan kebutuhan kompetensinya ke kampus.</li>
+                        <li>Tren skill masa depan hanya dibaca dari laporan, tidak dikaitkan dengan prodi.</li>
+                    </ul>
+                </div>
+                <div class="ld-cmp after">
+                    <h3><i class="fa-solid fa-circle-check"></i> Dengan C-DFS</h3>
+                    <ul>
+                        <li>Gap kompetensi tiap prodi terlihat dari lowongan yang masuk.</li>
+                        <li>Mahasiswa melihat skor kecocokan dan daftar skill yang perlu dipelajari sejak kuliah.</li>
+                        <li>Industri menulis kebutuhan sekali, langsung dipakai untuk pencocokan dan analisis.</li>
+                        <li>Tren pekerjaan &amp; skill ditampilkan sesuai prodi, lengkap dengan sumbernya.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOKUS: tiga hal yang dikerjakan C-DFS -->
+        <section class="ld-section" id="ldFokus">
+            <div class="ld-head">
+                <span class="ld-kicker">Fokus Kami</span>
+                <h2>Tiga hal yang dikerjakan C-DFS</h2>
+            </div>
+            <div class="ld-pillars">
+                <article class="ld-pillar">
+                    <div class="ld-ico"><i class="fa-solid fa-scale-unbalanced"></i></div>
+                    <h3>Analisis Kesenjangan Kompetensi</h3>
+                    <p>Membandingkan kompetensi yang diminta lowongan industri dengan bukti di transkrip, sertifikat, dan kemahiran bahasa mahasiswa.</p>
+                </article>
+                <article class="ld-pillar">
+                    <div class="ld-ico"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Prediksi Future Skills</h3>
+                    <p>Menunjukkan pekerjaan dan skill yang akan tumbuh atau menurun, dari tren lowongan C-DFS dan laporan WEF Future of Jobs 2025.</p>
+                </article>
+                <article class="ld-pillar">
+                    <div class="ld-ico"><i class="fa-solid fa-book-open"></i></div>
+                    <h3>Rekomendasi Kurikulum</h3>
+                    <p>Saran yang bisa ditindaklanjuti: perkuat mata kuliah, tambah mata kuliah atau modul baru, integrasi sertifikasi, dan penguatan bahasa.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- CARA KERJA: aliran data industri -> C-DFS -> mahasiswa & prodi -->
+        <section class="ld-section ld-alt" id="ldAlur">
+            <div class="ld-head">
+                <span class="ld-kicker">Cara Kerja</span>
+                <h2>Menghubungkan industri, mahasiswa, dan kurikulum</h2>
+            </div>
+            <ol class="ld-flow">
+                <li>
+                    <span class="ld-step">1</span>
+                    <h3><i class="fa-solid fa-building"></i> Industri</h3>
+                    <p>Jobprovider membuka lowongan dan menuliskan kompetensi serta bahasa yang dibutuhkan.</p>
+                </li>
+                <li>
+                    <span class="ld-step">2</span>
+                    <h3><i class="fa-solid fa-user-graduate"></i> Mahasiswa</h3>
+                    <p>Jobseeker mengunggah transkrip dan sertifikat. C-DFS membacanya otomatis.</p>
+                </li>
+                <li>
+                    <span class="ld-step">3</span>
+                    <h3><i class="fa-solid fa-microchip"></i> Analisis C-DFS</h3>
+                    <p>Kecocokan, gap kompetensi per prodi, dan tren skill dihitung dari data tersebut.</p>
+                </li>
+                <li>
+                    <span class="ld-step">4</span>
+                    <h3><i class="fa-solid fa-bullseye"></i> Hasil</h3>
+                    <p>Mahasiswa tahu apa yang perlu dipelajari, industri menemukan kandidat, prodi mendapat rekomendasi kurikulum.</p>
+                </li>
+            </ol>
+            <div class="ld-roles">
+                <div class="ld-role">
+                    <h3><i class="fa-solid fa-user-graduate"></i> Untuk Jobseeker</h3>
+                    <ul>
+                        <li>Tren pekerjaan &amp; skill untuk prodi Anda</li>
+                        <li>Skor kecocokan dan kesiapan tiap lowongan</li>
+                        <li>Daftar kompetensi yang perlu dipelajari</li>
+                        <li>Melamar dan memantau status lamaran</li>
+                    </ul>
+                </div>
+                <div class="ld-role">
+                    <h3><i class="fa-solid fa-building"></i> Untuk Jobprovider</h3>
+                    <ul>
+                        <li>Kelola lowongan &amp; kebutuhan kompetensi umum</li>
+                        <li>Kandidat diurutkan menurut kecocokan</li>
+                        <li>Kelola pelamar dan status lamaran</li>
+                        <li>Masukan kompetensi langsung ke kampus</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- USE CASE PER PRODI -->
+        <section class="ld-section" id="ldProdi">
+            <div class="ld-head">
+                <span class="ld-kicker">Jalur Pendidikan</span>
+                <h2>Akademis dan Vokasi: apa bedanya?</h2>
+                <p class="ld-head-sub">Telah disurvei bersama industri dan mahasiswa, dipadukan dengan tren WEF 2025.</p>
+            </div>
+            <!-- DATA DUMMY: ganti angka di bawah dengan hasil survei asli sebelum dipublikasikan -->
+            <div class="ld-survey" aria-label="Ringkasan survei">
+                <div class="ld-survey-item"><i class="fa-solid fa-building"></i><b>36</b><span>perusahaan &amp; instansi mitra</span></div>
+                <div class="ld-survey-item"><i class="fa-solid fa-user-graduate"></i><b>412</b><span>mahasiswa responden</span></div>
+                <div class="ld-survey-item"><i class="fa-solid fa-thumbs-up"></i><b>89%</b><span>mahasiswa terbantu mengetahui skill yang perlu dipelajari</span></div>
+                <div class="ld-survey-item"><i class="fa-solid fa-star"></i><b>4,6<small>/5</small></b><span>penilaian industri terhadap relevansi analisis</span></div>
+            </div>
+            <div class="ld-jalur">
+                <article class="ld-jalur-card">
+                    <span class="ld-case-tag">Akademis · Sarjana (S1)</span>
+                    <h3>Pendidikan Akademik</h3>
+                    <p>Pendidikan tinggi yang diarahkan pada <strong>penguasaan dan pengembangan ilmu pengetahuan</strong>. Kuliah menekankan teori, konsep, dan riset.</p>
+                    <ul>
+                        <li>Lulusan bergelar <strong>Sarjana</strong>, dapat lanjut ke Magister (S2) dan Doktor (S3).</li>
+                        <li>Cocok untuk karier pendidik, analis, peneliti, atau konsultan.</li>
+                        <li>Prodi yang sudah tercakup C-DFS: <strong>PGSD</strong> dan <strong>PG-PAUD</strong>.</li>
+                    </ul>
+                </article>
+                <article class="ld-jalur-card">
+                    <span class="ld-case-tag">Vokasi · Sarjana Terapan (D4)</span>
+                    <h3>Pendidikan Vokasi</h3>
+                    <p>Pendidikan tinggi yang menyiapkan mahasiswa untuk <strong>pekerjaan dengan keahlian terapan</strong>. Porsi praktikum, proyek, dan magang industri besar.</p>
+                    <ul>
+                        <li>Lulusan D4 bergelar <strong>Sarjana Terapan</strong>, dapat lanjut ke Magister Terapan.</li>
+                        <li>Cocok untuk karier teknisi ahli, spesialis, atau praktisi di industri.</li>
+                        <li>Prodi yang sudah tercakup C-DFS: <strong>TRSE</strong> dan <strong>Manajemen Pemasaran</strong>.</li>
+                    </ul>
+                </article>
+            </div>
+            <p class="ld-jalur-note"><i class="fa-solid fa-circle-info"></i> Di C-DFS keduanya dianalisis dengan cara yang sama: kebutuhan mitra dibandingkan dengan bukti di transkrip mahasiswa. Mitra prodi vokasi umumnya industri; mitra PGSD dan PG-PAUD adalah sekolah, lembaga PAUD, dan pengguna lulusan lainnya. Pencarian prodi memuat 1 prodi UM dari 10 fakultas.</p>
+        </section>
+
+        <!-- FAQ -->
+        <section class="ld-section ld-alt" id="ldFaq">
+            <div class="ld-head">
+                <span class="ld-kicker">FAQ</span>
+                <h2>Pertanyaan yang sering muncul</h2>
+            </div>
+            <div class="ld-faq">
+                <details open>
+                    <summary>Apa itu C-DFS?</summary>
+                    <p>C-DFS (Competency Driven Future Skills) adalah platform yang menghubungkan kebutuhan kompetensi industri dengan kemampuan mahasiswa dan kurikulum program studi. Hasilnya berupa analisis gap kompetensi, tren future skills, dan rekomendasi kurikulum.</p>
+                </details>
+                <details>
+                    <summary>Apa bedanya dengan job portal atau aplikasi latihan interview?</summary>
+                    <p>Job portal dan aplikasi latihan interview membantu orang melamar. C-DFS membawa data lowongan ke hulunya: kampus. Kebutuhan industri dibandingkan dengan transkrip mahasiswa per prodi, lalu diterjemahkan menjadi rekomendasi kurikulum dan daftar skill yang perlu dipelajari sejak masa kuliah.</p>
+                </details>
+                <details>
+                    <summary>Dari mana datanya?</summary>
+                    <p>Kebutuhan industri berasal dari lowongan dan kebutuhan kompetensi umum yang diisi Jobprovider (boleh diisi walau perusahaan belum membuka lowongan). Kemampuan mahasiswa berasal dari transkrip, sertifikat, dan kemahiran bahasa yang diunggah Jobseeker. Tren global memakai WEF <em>Future of Jobs Report 2025</em>.</p>
+                </details>
+                <details>
+                    <summary>Apakah data mahasiswa aman?</summary>
+                    <p>Analisis prodi dihitung di server secara anonim dan baru ditampilkan bila ada minimal 3 mahasiswa. Perusahaan hanya bisa melihat profil mahasiswa yang melamar ke mereka, atau yang mengizinkan profilnya dilihat. File yang diunggah tidak disimpan; yang disimpan hanya hasil pembacaannya.</p>
+                </details>
+                <details>
+                    <summary>Apakah skor kecocokan dibuat oleh AI?</summary>
+                    <p>Tidak. Semua skor dihitung dengan rumus yang terbuka (dijelaskan di setiap halaman). AI hanya dipakai untuk membaca dokumen hasil scan dan menulis ringkasan narasi bila diaktifkan.</p>
+                </details>
+                <details>
+                    <summary>Bagaimana cara mulai memakainya?</summary>
+                    <p><strong>Mahasiswa UM:</strong> klik Daftar, isi nama, email mahasiswa UM, dan password. <strong>Perusahaan / sekolah / instansi:</strong> klik Ajukan Kemitraan; admin memeriksa data (mis. NIB atau NPSN) lalu mengirim akun. <strong>Dosen / koordinator prodi:</strong> akun dibuatkan admin. Semua pengguna masuk lewat tombol <strong>Masuk</strong>.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- CTA PENUTUP -->
+        <section class="ld-cta">
+            <h2>Siap melihat skill apa yang dicari industri untuk prodi Anda?</h2>
+            <p>Mahasiswa UM daftar sendiri. Perusahaan, sekolah, dan instansi mengajukan kemitraan; akun dibuatkan admin setelah diverifikasi.</p>
+            <div class="ld-actions ld-actions-center">
+                <button class="ld-btn ld-btn-white ld-btn-lg ld-go-register"><i class="fa-solid fa-user-plus"></i> Daftar Mahasiswa</button>
+                <button class="ld-btn ld-btn-outline-white ld-btn-lg ld-go-mitra"><i class="fa-solid fa-handshake"></i> Ajukan Kemitraan</button>
+                <button class="ld-btn ld-btn-outline-white ld-btn-lg ld-go-login"><i class="fa-solid fa-right-to-bracket"></i> Masuk</button>
+            </div>
+        </section>
+
+        <!-- IDENTITAS -->
+        <section class="ld-section" id="ldTim">
+            <div class="ld-identity">
+                <div class="ld-id-main">
+                    <img src="img/logo-cdfs.png" alt="" />
+                    <div>
+                        <span class="ld-kicker">Tentang Kami</span>
+                        <h2>SMART TEAM FV</h2>
+                        <p>Tim mahasiswa Fakultas Vokasi Universitas Negeri Malang yang mengembangkan C-DFS untuk <strong>Lomba Inovasi Digital Mahasiswa (LIDM) 2026</strong>, divisi Inovasi Teknologi Digital Pendidikan.</p>
+                        <p class="ld-id-tag"><i class="fa-solid fa-location-dot"></i> Universitas Negeri Malang · Jl. Semarang No. 5, Malang</p>
+                    </div>
+                </div>
+                <div class="ld-team">
+                    <div class="ld-member"><span class="ld-av">MA</span><div><strong>Mayrisah Ardhitha Salsabillah</strong><small>Ketua Tim</small></div></div>
+                    <div class="ld-member"><span class="ld-av">DE</span><div><strong>Delvina Elisandrea</strong><small>Anggota</small></div></div>
+                    <div class="ld-member"><span class="ld-av">RH</span><div><strong>Rachmad Hidayatullah</strong><small>Anggota</small></div></div>
+                    <div class="ld-member"><span class="ld-av">RA</span><div><strong>Revansyah Armadito</strong><small>Anggota</small></div></div>
+                    <div class="ld-member ld-mentor"><span class="ld-av">JM</span><div><strong>Jibril Maulana, S.T., M.T.</strong><small>Dosen Pendamping</small></div></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="ld-footer">
+            <span><strong>C-DFS</strong> · Competency Driven Future Skills · SMART TEAM FV UM · 2026</span>
+            <span>Referensi future skills: World Economic Forum, <em>Future of Jobs Report 2025</em></span>
+        </footer>
+    </div>
+
+    <!-- ================================================================
+    AUTH CONTAINER (Login / Registrasi)
+    ================================================================ -->
+    <div class="auth-container" id="authContainer">
+        <div class="split-container">
+            <aside class="left-panel">
+                <div class="left-header">
+                    <div class="logo">
+                        <div class="logo-icon"><img src="img/logo-cdfs.png" alt="Logo C-DFS" /></div>
+                        <div class="logo-text">
+                            <strong>C-DFS</strong>
+                            <span>Curriculum &amp; Future Skills</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-body">
+                    <h2>Sistem Analisis Kompetensi Kurikulum Terintegrasi</h2>
+                    <p>Pantau gap keahlian lulusan, harmonisasikan kurikulum dengan standar industri global, dan petakan future skills secara presisi.</p>
+                </div>
+                <div class="vertical-stepper" id="global-stepper">
+                    <div class="v-step active" id="step-indicator-1">
+                        <div class="v-step-circle">1</div>
+                        <div class="v-step-text">
+                            <h4>Data Diri</h4>
+                            <p>Nama, email mahasiswa UM, dan password</p>
+                        </div>
+                    </div>
+                    <div class="v-step" id="step-indicator-2">
+                        <div class="v-step-circle">2</div>
+                        <div class="v-step-text">
+                            <h4>Akun Siap</h4>
+                            <p>Lengkapi profil kompetensi Anda</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="right-panel">
+                <div class="right-header-nav">
+                    <button class="back-btn" id="btn-back" style="visibility: hidden;">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="back-to-landing" id="backToLandingBtn">
+                        <i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda
+                    </button>
+                </div>
+
+                <div class="form-workspace">
+
+                    <!-- LOGIN -->
+                    <div class="auth-mode-content" id="view-login">
+                        <div class="login-welcome">
+                            <h1>Selamat Datang di C-DFS</h1>
+                            <p>Platform analitik kompetensi dan masa depan untuk pendidikan yang relevan dengan kebutuhan industri.</p>
+                        </div>
+                        <form id="formLogin" action="#">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-regular fa-envelope icon-left"></i>
+                                    <input type="email" id="loginEmail" placeholder="Masukkan email Anda" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Kata Sandi</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-lock icon-left"></i>
+                                    <input type="password" id="loginPassword" placeholder="Masukkan kata sandi" required />
+                                </div>
+                                <a href="#" class="forgot-link">Lupa kata sandi?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Masuk <i class="fa-solid fa-arrow-right"></i></button>
+                            <p class="login-link">
+                                Mahasiswa UM belum punya akun? <a id="switchToRegister">Daftar sekarang</a><br>
+                                Perusahaan / sekolah mitra? <a href="#" class="ld-go-mitra">Ajukan kemitraan</a>
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- REGISTER STEP 1 -->
+                    <div class="auth-mode-content active" id="view-step-1">
+                        <div class="page-title-section">
+                            <h1>Registrasi Mahasiswa</h1>
+                            <p>Khusus mahasiswa aktif Universitas Negeri Malang. Perusahaan / sekolah mitra: <a href="#" class="ld-go-mitra">ajukan kemitraan</a>; akun dosen dibuatkan admin.</p>
+                        </div>
+                        <form id="formRegister" action="#">
+                            <div class="form-group">
+                                <label>Nama Lengkap</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-regular fa-id-badge icon-left"></i>
+                                    <input type="text" id="regName" placeholder="Masukkan nama lengkap Anda" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Mahasiswa UM</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-regular fa-envelope icon-left"></i>
+                                    <input type="email" id="userEmail" placeholder="nama.nim@students.um.ac.id" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-lock icon-left"></i>
+                                    <input type="password" id="regPassword" placeholder="Minimal 8 karakter, huruf dan angka" minlength="8" required autocomplete="new-password" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Ulangi Password</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-lock icon-left"></i>
+                                    <input type="password" id="regPassword2" placeholder="Ketik ulang password" minlength="8" required autocomplete="new-password" />
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Daftar <i class="fa-solid fa-arrow-right"></i></button>
+                        </form>
+                        <p class="login-link">
+                            Sudah memiliki akun? <a id="switchToLogin">Masuk di sini</a>
+                        </p>
+                    </div>
+
+                    <!-- REGISTER STEP 2: selesai -->
+                    <div class="auth-mode-content" id="view-step-2">
+                        <div class="success-container">
+                            <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+                            <h2>Pendaftaran Selesai!</h2>
+                            <p>Akun mahasiswa Anda sudah dibuat. Langkah berikutnya: pilih prodi di <strong>Beranda</strong>, lalu unggah transkrip nilai di <strong>Profil Kompetensi</strong>.</p>
+                            <p class="success-summary" id="regSummary"></p>
+                            <button class="btn btn-primary" id="gotoDashboardBtn">Masuk ke Dashboard <i class="fa-solid fa-right-to-bracket"></i></button>
+                        </div>
+                    </div>
+
+                </div><!-- /form-workspace -->
+            </main>
+        </div>
+    </div>
+
+    <!-- ================================================================
+    DASHBOARD CONTAINER
+    ================================================================ -->
+    <div class="dashboard-container" id="dashboardContainer">
+        <div class="dashboard-layout">
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <div class="logo-icon"><img src="img/logo-cdfs.png" alt="Logo C-DFS" /></div>
+                    <div class="logo-text">
+                        <strong>C-DFS</strong>
+                        <span>Competency Driven<br />Future Skills</span>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <!-- Mahasiswa (Jobseeker) -->
+                    <a class="nav-item nav-js active" data-target="view-dashboard"><i class="fa-solid fa-house"></i> <span>Beranda</span></a>
+                    <a class="nav-item nav-js" data-target="view-profil"><i class="fa-solid fa-id-card"></i> <span>Profil Kompetensi</span></a>
+                    <a class="nav-item nav-js" data-target="view-jobmatch"><i class="fa-solid fa-wand-magic-sparkles"></i> <span>Kecocokan Lowongan</span></a>
+                    <a class="nav-item nav-js" data-target="view-pr-rekomendasi"><i class="fa-solid fa-book-open-reader"></i> <span>Rencana Belajar</span></a>
+                    <a class="nav-item nav-js" data-target="view-tracer"><i class="fa-solid fa-user-tie"></i> <span>Karier Alumni</span></a>
+                    <!-- Dosen / Prodi -->
+                    <a class="nav-item nav-dsn" data-target="view-dsn-ringkasan"><i class="fa-solid fa-gauge"></i> <span>Ringkasan Prodi</span></a>
+                    <a class="nav-item nav-dsn" data-target="view-pr-gap"><i class="fa-solid fa-users-viewfinder"></i> <span>Gap &amp; Rekomendasi Kurikulum</span></a>
+                    <a class="nav-item nav-dsn" data-target="view-pr-cpl"><i class="fa-solid fa-sitemap"></i> <span>CPL &amp; CPMK</span></a>
+                    <a class="nav-item nav-dsn" data-target="view-tracer"><i class="fa-solid fa-user-tie"></i> <span>Tracer Study</span></a>
+                    <a class="nav-item nav-dsn" data-target="view-dsn-mitra"><i class="fa-solid fa-handshake"></i> <span>Mitra Prodi</span></a>
+                    <!-- Mitra (Jobprovider) -->
+                    <a class="nav-item nav-jp" data-target="view-jp-dashboard"><i class="fa-solid fa-house"></i> <span>Ringkasan</span></a>
+                    <a class="nav-item nav-jp" data-target="view-jp-lowongan"><i class="fa-solid fa-briefcase"></i> <span>Kebutuhan Kompetensi</span></a>
+                    <a class="nav-item nav-jp" data-target="view-jp-kandidat"><i class="fa-solid fa-user-check"></i> <span>Kandidat &amp; Pelamar</span></a>
+                    <a class="nav-item nav-jp" data-target="view-jp-profil"><i class="fa-solid fa-building"></i> <span>Profil Mitra</span></a>
+                    <!-- Admin -->
+                    <a class="nav-item nav-adm" data-target="view-adm-akun"><i class="fa-solid fa-users-gear"></i> <span>Kelola Akun</span></a>
+                    <a class="nav-item nav-adm" data-target="view-adm-pengajuan"><i class="fa-solid fa-inbox"></i> <span>Pengajuan Mitra</span></a>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="data-source">
+                        <p class="source-title">Sumber Data</p>
+                        <p class="source-desc">Lowongan &amp; kompetensi dari Jobprovider, transkrip/sertifikat/bahasa Jobseeker (dipakai anonim untuk analisis prodi). Referensi global: WEF Future of Jobs 2025.</p>
+                        <div class="source-logos">
+                            <span style="color: #1d4ed8; font-weight:bold;"><i class="fa-solid fa-building"></i> Jobprovider</span>
+                            <span style="color: #0f766e; font-weight:bold;"><i class="fa-solid fa-user-graduate"></i> Jobseeker</span>
+                            <span style="color: #000; font-weight:bold; font-size:10px;"><i class="fa-solid fa-globe"></i> WEF</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="main-content">
+
+                <!-- ========================================================== -->
+                <!-- Halaman 1: DASHBOARD                                       -->
+                <!-- ========================================================== -->
+                <div id="view-dashboard" class="view-section active">
+                    <header class="top-header">
+                        <div class="header-left">
+                            <h1>Beranda</h1>
+                            <p>Ringkasan: arah skill, langkah Anda, lowongan relevan, dan status lamaran</p>
+                        </div>
+                        <div class="header-right">
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfile">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name" id="dashUserName">Admin PT</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu" id="dropdownMenu">
+                                        <a href="#" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+
+                    <div class="dashboard-body">
+                        <!-- Antarmuka Jobseeker: pilihan Jalur Pendidikan & Program Studi -->
+                        <div class="chart-card jobseeker-card" id="jobseekerDashCard">
+                            <div class="card-header-flex">
+                                <h3 class="card-title"><i class="fa-solid fa-user-graduate text-blue"></i> Jalur Pendidikan &amp; Program Studi</h3>
+                                <span class="badge badge-blue" id="dashProdiBadge">-</span>
+                            </div>
+                            <div class="search-pick-row">
+                                <div class="search-pick" id="pickJalur">
+                                    <label for="pickJalurInput">Jalur Pendidikan</label>
+                                    <div class="search-pick-box">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <input type="text" id="pickJalurInput" placeholder="Cari jalur: Akademis / Vocational" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="pickJalurList" />
+                                        <button type="button" class="search-pick-clear" aria-label="Hapus pilihan jalur">&times;</button>
+                                    </div>
+                                    <ul class="search-pick-list" id="pickJalurList" role="listbox"></ul>
+                                </div>
+                                <div class="search-pick" id="pickProdi">
+                                    <label for="pickProdiInput">Program Studi</label>
+                                    <div class="search-pick-box">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <input type="text" id="pickProdiInput" placeholder="Cari nama atau kode prodi, mis. TRSE" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="pickProdiList" />
+                                        <button type="button" class="search-pick-clear" aria-label="Hapus pilihan prodi">&times;</button>
+                                    </div>
+                                    <ul class="search-pick-list" id="pickProdiList" role="listbox"></ul>
+                                </div>
+                            </div>
+                            <div class="jalur-info" id="jalurInfo"></div>
+                        </div>
+
+                        <div class="dash-duo-head">
+                            <div>
+                                <h2 class="dash-duo-title">Arah Skill &amp; Gap Kompetensi</h2>
+                                <p class="fs-sub" id="dashModeSub">Pilih cakupan: prodi Anda atau semua (global)</p>
+                            </div>
+                            <div class="segmented fs-seg" id="dashSeg" role="tablist" aria-label="Cakupan grafik">
+                                <button type="button" class="seg-btn active" data-mode="prodi" role="tab">Prodi Saya</button>
+                                <button type="button" class="seg-btn" data-mode="global" role="tab">Global</button>
+                            </div>
+                        </div>
+                        <div class="dash-duo">
+                        <!-- FOKUS UTAMA: skill yang melonjak & yang berisiko punah -->
+                        <section class="chart-card fs-card" id="fsCard" aria-labelledby="fsTitle">
+                            <div class="card-header-flex fs-head">
+                                <div>
+                                    <h3 class="card-title" id="fsTitle">Tren Pekerjaan &amp; Skill ke Depan</h3>
+                                    <p class="fs-sub" id="fsSub">Perubahan jumlah pekerjaan 2025–2030 menurut WEF</p>
+                                </div>
+                            </div>
+                            <div class="custom-legend fs-legend"><div class="legend-item"><div class="dot" style="background:#16a34a"></div> Tumbuh</div><div class="legend-item"><div class="dot" style="background:#dc2626"></div> Menurun / berisiko hilang</div></div>
+                            <div class="fs-chart" id="fsChartBox"><canvas id="fsChart" aria-label="Grafik perubahan jumlah pekerjaan 2025-2030"></canvas></div>
+                            <div class="fs-skills" id="fsSkills"></div>
+                            <p class="fs-src" id="fsSrc"></p>
+                        </section>
+
+                        <!-- Tumbuh & Gap kompetensi: per prodi atau semua prodi -->
+                        <section class="chart-card fs-card gk-card" id="gkCard" aria-labelledby="gkTitle">
+                            <div class="card-header-flex fs-head">
+                                <div>
+                                    <h3 class="card-title" id="gkTitle">Tumbuh &amp; Gap Kompetensi</h3>
+                                    <p class="fs-sub" id="gkSub">Kompetensi yang diminta industri dibanding kesiapan mahasiswa</p>
+                                </div>
+                            </div>
+                            <div class="custom-legend fs-legend" id="gkLegend"></div>
+                            <div class="fs-chart" id="gkChartBox"><canvas id="gkChart" aria-label="Grafik gap kompetensi"></canvas></div>
+                            <div class="jp-empty-block is-hidden" id="gkEmpty"></div>
+                            <div class="gk-foot" id="gkFoot"></div>
+                            <p class="fs-src" id="gkSrc"></p>
+                        </section>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat-card"><div class="stat-icon bg-green-light"><i class="fa-solid fa-chart-line"></i></div><div class="stat-info"><p class="stat-label">IPK</p><h3 class="stat-value" id="jsDashIpk">-</h3><p class="stat-desc" id="jsDashIpkDesc">Upload transkrip di Job Matching</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-orange-light"><i class="fa-solid fa-certificate"></i></div><div class="stat-info"><p class="stat-label">Sertifikat &amp; Bahasa</p><h3 class="stat-value" id="jsDashCert">0</h3><p class="stat-desc" id="jsDashCertDesc">0 sertifikat · 0 bahasa</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-blue-light"><i class="fa-solid fa-briefcase"></i></div><div class="stat-info"><p class="stat-label">Lowongan untuk Prodi Anda</p><h3 class="stat-value" id="jsDashLow">0</h3><p class="stat-desc" id="jsDashLowDesc">dari Jobprovider</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-blue-light"><i class="fa-solid fa-paper-plane"></i></div><div class="stat-info"><p class="stat-label">Lamaran Saya</p><h3 class="stat-value" id="jsDashLam">0</h3><p class="stat-desc" id="jsDashLamDesc">belum ada lamaran</p></div></div>
+                        </div>
+
+                        <div class="chart-card js-next-card" id="jsNextCard"></div>
+                        <div class="chart-card js-learn-card is-hidden" id="jsLearnCard"></div>
+
+                        <div class="charts-grid">
+                            <div class="table-card flex-2">
+                                <div class="card-header-flex"><h3 class="card-title"><i class="fa-solid fa-briefcase text-blue"></i> Lowongan untuk Prodi Anda</h3><button class="btn-outline-blue js-goto" data-goto="view-jobmatch" style="margin:0;">Cek Kecocokan <i class="fa-solid fa-arrow-right"></i></button></div>
+                                <div class="js-low-list" id="jsLowList"></div>
+                            </div>
+                            <div class="table-card flex-1">
+                                <div class="card-header-flex"><h3 class="card-title"><i class="fa-solid fa-paper-plane text-blue"></i> Status Lamaran</h3></div>
+                                <div class="js-lam-list" id="jsLamList"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- JOBSEEKER · KOMPETENSI PRODI 3: CPL & CPMK                   -->
+                <!-- ========================================================== -->
+                <div id="view-pr-cpl" class="view-section">
+                    <header class="top-header">
+                        <div class="header-left"><h1>CPL &amp; CPMK</h1><p>Rantai penelusuran: kebutuhan mitra → CPL → CPMK → mata kuliah</p></div>
+                        <div class="header-right">
+                            <span class="badge badge-blue pr-prodi-chip">-</span>
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfileCp">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name">Jobseeker</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu"><a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard-body">
+                        <div class="jp-empty-block pr-noprodi is-hidden"><i class="fa-solid fa-graduation-cap"></i>Pilih program studi Anda di <a href="#" class="js-goto" data-goto="view-dashboard">Beranda</a> untuk melihat CPL &amp; CPMK.</div>
+                        <div class="pr-body">
+                        <div class="pr-note is-hidden" id="cpNote"></div>
+                        <div class="cp-toolbar dsn-only"><span class="jp-muted">Ubah, hapus, atau tambah CPL dan CPMK sesuai RPS prodi. Kata kunci CPMK dipakai untuk memetakan kebutuhan mitra.</span><button type="button" class="jp-btn-sm primary" id="cpAddCpl"><i class="fa-solid fa-plus"></i> Tambah CPL</button></div>
+                        <p class="cp-ringkas" id="cpRingkas"></p>
+                        <div class="cp-list" id="cpList"></div>
+                        <div class="cp-belum-box is-hidden" id="cpBelum"></div>
+                        <details class="jm-method">
+                            <summary><i class="fa-solid fa-circle-info"></i> Cara membaca &amp; siapa yang mengisi</summary>
+                            <ul>
+                                <li><strong>CPL &amp; CPMK</strong> diinput admin prodi dari RPS. <strong>Kebutuhan mitra</strong> diisi Jobprovider dari survei / wawancara nyata, lalu dipetakan ke CPMK lewat kata kunci yang ditetapkan admin prodi.</li>
+                                <li><strong>X dari Y mitra</strong> = jumlah mitra yang meminta kompetensi terkait CPL itu (jumlah, bukan persen, karena sampel kecil).</li>
+                                <li><strong>Bertumbuh</strong> = diminta mitra dan WEF 2025 memperkirakan skill terkait naik. <strong>Perlu ditinjau</strong> = belum diminta mitra atau WEF memperkirakan menurun; bukan berarti dihapus.</li>
+                                <li>✓ = mata kuliah CPMK itu sudah Anda tempuh dengan nilai &ge; B.</li>
+                            </ul>
+                        </details>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- JOBSEEKER: TRACER STUDY ALUMNI                               -->
+                <!-- ========================================================== -->
+                <div id="view-tracer" class="view-section">
+                    <header class="top-header">
+                        <div class="header-left"><h1><span class="js-only">Karier Alumni</span><span class="dsn-only">Tracer Study Alumni</span></h1><p>Ke mana alumni bekerja, berapa yang sudah dan belum bekerja, dan berapa lama masa tunggunya</p></div>
+                        <div class="header-right">
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfileTr">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name">Jobseeker</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu"><a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard-body">
+                        <div class="tr-bar">
+                            <div class="segmented" id="trSeg" role="tablist" aria-label="Cakupan">
+                                <button type="button" class="seg-btn active" data-mode="prodi" role="tab">Prodi Saya</button>
+                                <button type="button" class="seg-btn" data-mode="global" role="tab">Semua Prodi</button>
+                            </div>
+                            <label class="tr-field"><span>Tahun lulus</span><select id="trTahun"><option value="">Semua</option></select></label>
+                            <span class="tr-privasi"><i class="fa-solid fa-user-shield"></i> Nama alumni tidak ditampilkan</span>
+                        </div>
+                        <div class="pr-note is-hidden" id="trNote"></div>
+                        <div class="chart-card tr-upload dsn-only">
+                            <div class="card-header-flex"><h3 class="card-title"><i class="fa-solid fa-file-arrow-up text-blue"></i> Unggah Hasil Tracer Study</h3><a href="#" id="trTemplate">Unduh template CSV</a></div>
+                            <p class="jp-muted" style="margin:0 0 10px">File CSV (dari Excel: <em>Simpan sebagai &rarr; CSV</em>). Kolom: <code>nama, tahun_lulus, status, perusahaan, posisi, masa_tunggu, sesuai_bidang</code>. Status: Bekerja / Wirausaha / Belum Bekerja. Data masuk ke prodi Anda; nama alumni tidak ditampilkan ke mahasiswa.</p>
+                            <div class="tr-upload-row">
+                                <input type="file" id="trFile" accept=".csv,text/csv" />
+                                <select id="trMode"><option value="tambah">Tambahkan ke data yang ada</option><option value="ganti">Ganti semua data prodi ini</option></select>
+                                <button type="button" class="jp-btn-sm primary" id="trUpload"><i class="fa-solid fa-upload"></i> Unggah</button>
+                            </div>
+                            <div class="jp-muted" id="trUploadInfo"></div>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-card"><div class="stat-icon bg-blue-light"><i class="fa-solid fa-users"></i></div><div class="stat-info"><p class="stat-label">Total Alumni Terlacak</p><h3 class="stat-value" id="trTotal">0</h3><p class="stat-desc" id="trTotalDesc">-</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-green-light"><i class="fa-solid fa-briefcase"></i></div><div class="stat-info"><p class="stat-label">Sudah Bekerja</p><h3 class="stat-value" id="trKerja">0</h3><p class="stat-desc" id="trKerjaDesc">-</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-red-light"><i class="fa-solid fa-hourglass-half"></i></div><div class="stat-info"><p class="stat-label">Belum Bekerja</p><h3 class="stat-value" id="trBelum">0</h3><p class="stat-desc" id="trBelumDesc">-</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-orange-light"><i class="fa-solid fa-clock"></i></div><div class="stat-info"><p class="stat-label">Rata-rata Masa Tunggu</p><h3 class="stat-value" id="trTunggu">-</h3><p class="stat-desc" id="trTungguDesc">-</p></div></div>
+                        </div>
+                        <div class="charts-grid">
+                            <div class="chart-card flex-1">
+                                <div class="card-header-flex"><h3 class="card-title">Status Alumni</h3></div>
+                                <div class="tr-donut"><canvas id="trDonut" aria-label="Grafik alumni sudah dan belum bekerja"></canvas></div>
+                                <div class="custom-legend tr-legend"><div class="legend-item"><div class="dot" style="background:#16a34a"></div> Sudah bekerja</div><div class="legend-item"><div class="dot" style="background:#dc2626"></div> Belum bekerja</div></div>
+                            </div>
+                            <div class="chart-card flex-2">
+                                <div class="card-header-flex"><h3 class="card-title">Persentase Alumni Sudah Bekerja per Prodi</h3></div>
+                                <div class="tr-prodi-list" id="trProdiList"></div>
+                                <p class="fs-src">Nama perusahaan hanya ditampilkan untuk <strong>mitra C-DFS yang mengizinkan</strong> namanya dicantumkan. Tempat kerja lain dihitung tanpa nama.</p>
+                            </div>
+                        </div>
+                        <div class="charts-grid">
+                            <div class="chart-card flex-2">
+                                <div class="card-header-flex"><h3 class="card-title">Status Alumni per Tahun Lulus</h3></div>
+                                <div class="fs-chart" id="trTahunBox"><canvas id="trTahunChart" aria-label="Grafik status alumni per tahun lulus"></canvas></div>
+                            </div>
+                            <div class="chart-card flex-1">
+                                <div class="card-header-flex"><h3 class="card-title">Masa Tunggu Kerja</h3></div>
+                                <div class="fs-chart" id="trTungguBox"><canvas id="trTungguChart" aria-label="Grafik masa tunggu kerja alumni"></canvas></div>
+                                <p class="fs-src" id="trSesuai"></p>
+                            </div>
+                        </div>
+                        <details class="jm-method">
+                            <summary><i class="fa-solid fa-circle-info"></i> Dari mana datanya?</summary>
+                            <ul>
+                                <li>Data berasal dari <strong>tracer study prodi</strong> (kuesioner alumni yang dikelola kampus), disimpan di tabel <code>tracer_alumni</code>.</li>
+                                <li>Halaman ini hanya menampilkan angka agregat. <strong>Nama alumni tidak dikirim ke browser.</strong> Nama perusahaan hanya muncul bila perusahaan itu mitra C-DFS yang sudah mengizinkan namanya ditampilkan.</li>
+                                <li><strong>Sudah bekerja</strong> termasuk alumni yang berwirausaha. <strong>Masa tunggu</strong> = bulan dari lulus sampai mulai bekerja. <strong>Sesuai bidang</strong> = pekerjaan berkaitan dengan bidang prodi.</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- MAHASISWA: PROFIL KOMPETENSI (semua input di satu tempat)  -->
+                <!-- ========================================================== -->
+                <div id="view-profil" class="view-section">
+                    <header class="top-header">
+                        <div class="header-left"><h1>Profil Kompetensi</h1><p>Transkrip nilai, sertifikat, dan kemahiran bahasa Anda. Program studi dipilih di Beranda.</p></div>
+                        <div class="header-right">
+                            
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfilePf">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name">Jobseeker</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu"><a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard-body">
+                        <!-- Satu kartu input: transkrip (wajib) + sertifikat (opsional) + kemahiran bahasa -->
+                        <div class="chart-card jm-input-card">
+                            <div class="card-header-flex">
+                                <h3 class="card-title"><i class="fa-solid fa-folder-open text-blue"></i> Data Kemampuan Anda</h3>
+                                <span class="jp-muted">Transkrip wajib · sertifikat &amp; bahasa opsional</span>
+                            </div>
+
+                            <div class="jm-upload-row">
+                                <label class="jm-drop" id="jmDropTranskrip" for="jmFileTranskrip">
+                                    <input type="file" id="jmFileTranskrip" accept="application/pdf,.pdf" hidden />
+                                    <span class="jm-drop-tag wajib">Wajib</span>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                    <strong>Transkrip Nilai (PDF)</strong>
+                                    <span>Mata kuliah, SKS, nilai, prodi, dan IPK dideteksi otomatis.</span>
+                                    <em class="jm-drop-status" id="jmDropTranskripStatus">Klik atau seret file ke sini</em>
+                                </label>
+                                <label class="jm-drop" id="jmDropCert" for="jmFileCert">
+                                    <input type="file" id="jmFileCert" accept="application/pdf,.pdf,image/png,image/jpeg,image/webp" multiple hidden />
+                                    <span class="jm-drop-tag">Opsional</span>
+                                    <i class="fa-solid fa-award"></i>
+                                    <strong>Sertifikat BNSP / Non-BNSP</strong>
+                                    <span>PDF/JPG/PNG, boleh lebih dari satu. Jenis &amp; nama skema dideteksi otomatis.</span>
+                                    <em class="jm-drop-status" id="jmDropCertStatus">Klik atau seret file ke sini</em>
+                                </label>
+                            </div>
+
+                            <!-- Hasil deteksi transkrip -->
+                            <div class="jm-detect is-hidden" id="jmTranskripInfo"></div>
+                            <div class="jm-best is-hidden" id="jmBestBox">
+                                <p class="jm-sub-title"><i class="fa-solid fa-trophy"></i> Nilai terbaik (mata kuliah bidang)</p>
+                                <div class="jm-best-list" id="jmBestList"></div>
+                            </div>
+
+                            <!-- Hasil deteksi sertifikat -->
+                            <div class="jm-cert-wrap is-hidden" id="jmCertWrap">
+                                <p class="jm-sub-title"><i class="fa-solid fa-certificate"></i> Sertifikat terdeteksi</p>
+                                <div class="jm-cert-list" id="jmCertListView"></div>
+                            </div>
+                            <datalist id="jmCertList"></datalist>
+
+                            <!-- Kemahiran bahasa -->
+                            <div class="jm-lang">
+                                <p class="jm-sub-title"><i class="fa-solid fa-language"></i> Kemahiran Bahasa <span class="jm-opt">opsional</span></p>
+                                <div class="jm-lang-form">
+                                    <div class="jp-field">
+                                        <label>Bahasa</label>
+                                        <div class="segmented jm-lang-pick" id="jmLangPick">
+                                            <button type="button" class="seg-btn active" data-lang="Inggris">Inggris</button>
+                                            <button type="button" class="seg-btn" data-lang="Jerman">Jerman</button>
+                                            <button type="button" class="seg-btn" data-lang="Jepang">Jepang</button>
+                                            <button type="button" class="seg-btn" data-lang="__lain">Lainnya</button>
+                                        </div>
+                                        <input type="text" id="jmLangOther" class="jp-input is-hidden" maxlength="40" placeholder="Tulis bahasa lain, mis. Mandarin, Arab, Korea" />
+                                    </div>
+                                    <div class="jp-field">
+                                        <label>Tingkat Kemahiran</label>
+                                        <div class="segmented jm-lang-level" id="jmLangLevel">
+                                            <button type="button" class="seg-btn" data-level="Basic">Basic</button>
+                                            <button type="button" class="seg-btn active" data-level="Intermediate">Intermediate</button>
+                                            <button type="button" class="seg-btn" data-level="Advanced">Advanced</button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="jp-btn-sm primary jm-lang-add" id="jmLangAdd"><i class="fa-solid fa-plus"></i> Tambah Bahasa</button>
+                                </div>
+                                <div class="jm-lang-list" id="jmLangList"></div>
+                            </div>
+
+                            <label class="jm-consent">
+                                <input type="checkbox" id="jmTampil" />
+                                <span><strong>Izinkan perusahaan melihat profil saya</strong> di menu Kandidat milik Jobprovider (nama, prodi, nilai, sertifikat, bahasa). Tanpa izin ini, profil Anda hanya terlihat oleh perusahaan yang Anda lamar. Data Anda juga dipakai <em>secara anonim</em> untuk analisis kurikulum prodi.</span>
+                            </label>
+
+                            <details class="jm-manual" id="jmManual">
+                                <summary>Lihat / koreksi data mata kuliah (<span id="jmMkCount">0</span>)</summary>
+                                <form class="jm-row-form" id="formJmMk">
+                                    <input id="jmMkNama" class="jp-input" type="text" placeholder="Nama mata kuliah" required />
+                                    <input id="jmMkSks" class="jp-input" type="number" min="1" max="8" value="3" aria-label="SKS" />
+                                    <select id="jmMkNilai" class="jp-input" aria-label="Nilai huruf">
+                                        <option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>D</option><option>E</option>
+                                    </select>
+                                    <button type="submit" class="jp-btn-sm primary"><i class="fa-solid fa-plus"></i> Tambah</button>
+                                </form>
+                                <div class="table-responsive jm-table-wrap">
+                                    <table class="data-table">
+                                        <thead><tr><th>Mata Kuliah</th><th class="text-center" style="width:70px;">SKS</th><th class="text-center" style="width:80px;">Nilai</th><th class="text-center" style="width:60px;"></th></tr></thead>
+                                        <tbody id="jmMkBody"></tbody>
+                                    </table>
+                                </div>
+                                <p class="jm-note">Bobot nilai (pedoman UM): A=4 · A-=3,7 · B+=3,3 · B=3 · B-=2,7 · C+=2,3 · C=2 · D=1 · E=0 (AB=3,5 · BC=2,5). Bila transkrip memuat nilai angka (NA), nilai angka yang dipakai.</p>
+                            </details>
+                        </div>
+
+                        <div class="jm-run-bar">
+                            <div><strong>Data sudah lengkap?</strong> <span class="jp-muted">Lihat lowongan yang cocok dan rencana belajar Anda.</span></div>
+                            <div class="pf-go"><button type="button" class="jp-btn-sm js-goto-btn" data-goto="view-pr-rekomendasi"><i class="fa-solid fa-book-open-reader"></i> Rencana Belajar</button>
+                            <button type="button" class="btn btn-primary jm-run-btn js-goto-btn" data-goto="view-jobmatch"><i class="fa-solid fa-wand-magic-sparkles"></i> Lihat Kecocokan Lowongan</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- JOBSEEKER: JOB MATCHING (analisis AI)                       -->
+                <!-- ========================================================== -->
+                <div id="view-jobmatch" class="view-section">
+                    <header class="top-header">
+                        <div class="header-left"><h1>Kecocokan Lowongan</h1><p>Kecocokan dan kesiapan Anda pada lowongan mitra, dihitung dari data di Profil Kompetensi</p></div>
+                        <div class="header-right">
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfileJm">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name">Jobseeker</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu"><a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard-body">
+                        <div class="stats-grid">
+                            <div class="stat-card"><div class="stat-icon bg-blue-light"><i class="fa-solid fa-user-graduate"></i></div><div class="stat-info"><p class="stat-label">Program Studi</p><h3 class="stat-value jm-stat-text" id="jmStatProdi">-</h3><p class="stat-desc" id="jmStatJalur">Terdeteksi dari transkrip</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-green-light"><i class="fa-solid fa-chart-line"></i></div><div class="stat-info"><p class="stat-label">IPK</p><h3 class="stat-value" id="jmStatIpk">0,00</h3><p class="stat-desc" id="jmStatSks">0 SKS · 0 mata kuliah</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-orange-light"><i class="fa-solid fa-certificate"></i></div><div class="stat-info"><p class="stat-label">Sertifikat &amp; Bahasa</p><h3 class="stat-value" id="jmStatCert">0</h3><p class="stat-desc" id="jmStatCertDetail">0 BNSP · 0 Non-BNSP · 0 bahasa</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-blue-light"><i class="fa-solid fa-bullseye"></i></div><div class="stat-info"><p class="stat-label">Lowongan Kesiapan Tinggi</p><h3 class="stat-value" id="jmStatTinggi">-</h3><p class="stat-desc" id="jmStatLowongan">dari 0 lowongan</p></div></div>
+                        </div>
+
+                        <div class="jm-run-bar">
+                            <div>
+                                <strong>Analisis dengan AI</strong>
+                                <span class="jp-muted" id="jmRunHint">Mencocokkan transkrip, sertifikat, dan kemahiran bahasa Anda dengan lowongan dari Jobprovider.</span>
+                            </div>
+                            <button type="button" class="btn btn-primary jm-run-btn" id="jmRunBtn"><i class="fa-solid fa-wand-magic-sparkles"></i> Analisis dengan AI</button>
+                        </div>
+
+                        <!-- Hasil -->
+                        <div class="jm-results is-hidden" id="jmResults">
+                            <div class="chart-card jm-ai-card">
+                                <div class="card-header-flex">
+                                    <h3 class="card-title"><i class="fa-solid fa-robot text-blue"></i> Ringkasan Analisis AI</h3>
+                                    <span class="badge badge-blue" id="jmAiSource">-</span>
+                                </div>
+                                <div class="jm-ai-text" id="jmAiText"></div>
+                            </div>
+
+                            <div class="chart-card">
+                                <div class="card-header-flex"><h3 class="card-title"><i class="fa-solid fa-briefcase text-blue"></i> Pekerjaan yang Paling Cocok</h3><span class="jp-muted">berdasarkan nilai mata kuliah &amp; sertifikat</span></div>
+                                <div class="jm-role-grid" id="jmRoleGrid"></div>
+                            </div>
+
+                            <div class="card-header-flex jm-results-head">
+                                <h3 class="card-title">Kecocokan per Lowongan</h3>
+                                <div class="segmented" id="jmSort">
+                                    <button type="button" class="seg-btn active" data-sort="peluang">Urut Skor Kesiapan</button>
+                                    <button type="button" class="seg-btn" data-sort="kecocokan">Urut Kecocokan</button>
+                                </div>
+                            </div>
+                            <div class="jm-job-grid" id="jmJobGrid"></div>
+                            <details class="jm-method">
+                                <summary><i class="fa-solid fa-circle-info"></i> Bagaimana dokumen dibaca dan skor dihitung?</summary>
+                                <ul>
+                                    <li><strong>Transkrip PDF</strong> dibaca langsung di browser (format Rekap Hasil Studi SIAKAD dan transkrip berbasis teks sejenis). Jika tidak terbaca dan API key AI diisi, dokumen dibaca oleh AI. File tidak disimpan di server, hanya data hasil deteksinya.</li>
+                                    <li><strong>Sertifikat</strong> dianggap BNSP bila memuat "BNSP", "Badan Nasional Sertifikasi Profesi", atau "Lembaga Sertifikasi Profesi (LSP)". Sertifikat berupa gambar dibaca oleh AI bila API key diisi; jika tidak, jenis dan nama dapat dikoreksi manual.</li>
+                                    <li><strong>Bukti tiap kompetensi</strong> = nilai tertinggi di antara mata kuliah terkait (nilai/4), sertifikat terkait (BNSP 1,0 · Non-BNSP 0,8), atau kemahiran bahasa terkait (Basic 0,4 · Intermediate 0,7 · Advanced 1,0). Kompetensi tanpa bukti bernilai 0, walau prodinya sesuai.</li>
+                                    <li><strong>Verifikasi</strong>: mata kuliah yang terbaca otomatis dari PDF transkrip ditandai terverifikasi; yang ditambahkan manual diberi label <em>manual</em>, terlihat oleh perusahaan, dan tidak dihitung dalam analisis prodi.</li>
+                                    <li><strong>Kecocokan</strong> = 30% kesesuaian prodi + 70% rata-rata bukti. <strong>Skor Kesiapan</strong> = 55% kecocokan + 25% IPK/4 + 10% kekuatan sertifikat + 10% kemahiran bahasa tertinggi. Skor ini mengukur kesiapan data Anda, bukan peluang pasti diterima kerja. Tinggi &ge; 75 · Sedang 50–74 · Rendah &lt; 50.</li>
+                                    <li><strong>Lowongan</strong> berasal dari menu Kelola Lowongan milik Jobprovider (posisi, kompetensi, dan syarat bahasa minimal). Perusahaan yang belum membuka lowongan tetap ditampilkan sebagai "Kebutuhan kompetensi". Syarat bahasa terpenuhi bila tingkat Anda sama atau lebih tinggi dari tingkat minimal. Status: <strong>Cocok</strong> (kecocokan &ge; 75), <strong>Cukup cocok</strong> (50–74), <strong>Belum cocok</strong> (&lt; 50).</li>
+                                    <li><strong>Pekerjaan yang cocok</strong> = rata-rata bukti terhadap kompetensi inti tiap profil pekerjaan.</li>
+                                </ul>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- JOBPROVIDER 1: RINGKASAN REKRUTMEN                          -->
+                <!-- ========================================================== -->
+                <div id="view-jp-dashboard" class="view-section">
+                    <header class="top-header">
+                        <div class="header-left"><h1>Ringkasan</h1><p>Pantau lowongan, kompetensi yang Anda butuhkan, dan kandidat yang paling sesuai</p></div>
+                        <div class="header-right">
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfileJp1">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name">Jobprovider</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu"><a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard-body">
+                        <div class="chart-card jp-profile-card">
+                            <div class="jp-profile-main">
+                                <div class="jp-company-avatar"><i class="fa-solid fa-building"></i></div>
+                                <div>
+                                    <h3 class="jp-company-name" id="jpCompanyName">Perusahaan</h3>
+                                    <p class="jp-company-meta">Akun Jobprovider</p>
+                                </div>
+                            </div>
+                            <div class="jp-profile-actions">
+                                <button type="button" class="btn-outline-blue jp-goto" data-goto="view-jp-kompetensi" style="margin:0;"><i class="fa-solid fa-plus"></i> Kompetensi</button>
+                                <button type="button" class="btn-outline-blue jp-goto" data-goto="view-jp-lowongan" style="margin:0;"><i class="fa-solid fa-plus"></i> Lowongan</button>
+                            </div>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-card"><div class="stat-icon bg-blue-light"><i class="fa-solid fa-briefcase"></i></div><div class="stat-info"><p class="stat-label">Lowongan Aktif</p><h3 class="stat-value" id="jpStatLowongan">0</h3><p class="stat-desc" id="jpStatLowonganDesc">dari 0 lowongan</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-blue-light"><i class="fa-solid fa-list-check"></i></div><div class="stat-info"><p class="stat-label">Kompetensi &amp; Bahasa</p><h3 class="stat-value" id="jpStatKompetensi">0</h3><p class="stat-desc" id="jpStatProdi">untuk 0 program studi</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-green-light"><i class="fa-solid fa-user-check"></i></div><div class="stat-info"><p class="stat-label">Kandidat Cocok</p><h3 class="stat-value" id="jpStatKandidat">0</h3><p class="stat-desc">Skor kecocokan &ge; 60%</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-orange-light"><i class="fa-solid fa-bookmark"></i></div><div class="stat-info"><p class="stat-label">Lamaran Masuk</p><h3 class="stat-value" id="jpStatLamaran">0</h3><p class="stat-desc" id="jpStatShortlist">0 shortlist</p></div></div>
+                        </div>
+
+                        <div class="charts-grid">
+                            <div class="chart-card flex-1">
+                                <div class="card-header-flex"><h3 class="card-title">Kebutuhan per Program Studi</h3><span class="jp-muted">kompetensi · lowongan</span></div>
+                                <div class="jp-prodi-bars" id="jpProdiBars"></div>
+                            </div>
+                            <div class="table-card flex-2">
+                                <div class="card-header-flex"><h3 class="card-title">Kandidat Teratas</h3><button class="btn-outline-blue jp-goto" data-goto="view-jp-kandidat" style="margin:0;">Lihat Semua <i class="fa-solid fa-arrow-right"></i></button></div>
+                                <div class="table-responsive">
+                                    <table class="data-table">
+                                        <thead><tr><th>Nama</th><th>Program Studi</th><th class="text-center">Kecocokan</th><th class="text-center">Status</th></tr></thead>
+                                        <tbody id="jpTopBody"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- JOBPROVIDER 2a: KEBUTUHAN KOMPETENSI UMUM                  -->
+                <!-- ========================================================== -->
+                <div id="view-jp-kompetensi" class="view-section">
+                    <header class="top-header">
+                        <div class="header-left"><h1>Kebutuhan Kompetensi</h1><p>Kebutuhan tanpa lowongan: kompetensi dan bahasa yang Anda perlukan per prodi, walau belum membuka lowongan</p></div>
+                        <div class="header-right">
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfileJp2">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name">Jobprovider</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu"><a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard-body">
+                        <div class="page-tabs view-tabs" role="tablist">
+                            <button type="button" class="tab-btn" data-view="view-jp-lowongan"><i class="fa-solid fa-briefcase"></i> Lowongan</button>
+                            <button type="button" class="tab-btn active" data-view="view-jp-kompetensi"><i class="fa-solid fa-layer-group"></i> Kebutuhan tanpa lowongan</button>
+                        </div>
+                        <div class="jp-method-note jp-kku-note">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span><strong>Dipakai untuk kebutuhan jangka panjang perusahaan, walau belum ada lowongan.</strong> Isinya (1) muncul sebagai pilihan cepat saat membuat lowongan, (2) dikirim ke kampus sebagai masukan kurikulum dan tampil ke mahasiswa sebagai "Kebutuhan kompetensi", dan (3) dipakai menilai kandidat bila Anda memilih "Semua kebutuhan kompetensi umum". Kompetensi yang Anda ketik di form lowongan otomatis ikut tersimpan di sini.</span>
+                        </div>
+                        <div class="chart-card">
+                            <div class="card-header-flex jp-komp-head">
+                                <div class="segmented" id="jpKompTab">
+                                    <button type="button" class="seg-btn active" data-tab="teknis"><i class="fa-solid fa-gears"></i> Kompetensi Teknis</button>
+                                    <button type="button" class="seg-btn" data-tab="bahasa"><i class="fa-solid fa-language"></i> Kebutuhan Bahasa</button>
+                                </div>
+                                <div class="jp-field jp-komp-prodi">
+                                    <label for="jpKompProdi">Program Studi Terkait</label>
+                                    <select id="jpKompProdi" class="jp-input"></select>
+                                </div>
+                            </div>
+                            <!-- Tab: Kompetensi teknis -->
+                            <div id="jpKompPaneTeknis">
+                                <form id="formJpKompetensi" class="jp-komp-form">
+                                    <div class="jp-field">
+                                        <label for="jpKompNama">Nama Kompetensi</label>
+                                        <input id="jpKompNama" class="jp-input" type="text" placeholder="Contoh: Mikrokontroler" required />
+                                    </div>
+                                    <button type="submit" class="btn-primary jp-komp-add"><i class="fa-solid fa-plus"></i> Tambah</button>
+                                </form>
+                                <div class="jp-suggest" id="jpKompSuggest"></div>
+                            </div>
+                            <!-- Tab: Kebutuhan bahasa -->
+                            <div id="jpKompPaneBahasa" class="is-hidden">
+                                <div class="jm-lang-form">
+                                    <div class="jp-field">
+                                        <label>Bahasa</label>
+                                        <div class="segmented jm-lang-pick" id="jpKLangPick">
+                                                <button type="button" class="seg-btn active" data-lang="Inggris">Inggris</button>
+                                                <button type="button" class="seg-btn" data-lang="Jerman">Jerman</button>
+                                                <button type="button" class="seg-btn" data-lang="Jepang">Jepang</button>
+                                                <button type="button" class="seg-btn" data-lang="__lain">Lainnya</button>
+                                            </div>
+                                            <input type="text" id="jpKLangOther" class="jp-input is-hidden" maxlength="40" placeholder="Tulis bahasa lain, mis. Mandarin, Arab, Korea" />
+                                    </div>
+                                    <div class="jp-field">
+                                        <label>Tingkat Minimal</label>
+                                        <div class="segmented" id="jpKLangLevel">
+                                                <button type="button" class="seg-btn" data-level="Basic">Basic</button>
+                                                <button type="button" class="seg-btn active" data-level="Intermediate">Intermediate</button>
+                                                <button type="button" class="seg-btn" data-level="Advanced">Advanced</button>
+                                            </div>
+                                    </div>
+                                    <button type="button" class="jp-btn-sm primary jm-lang-add" id="jpKLangAdd"><i class="fa-solid fa-plus"></i> Tambah Bahasa</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-card">
+                            <div class="card-header-flex"><h3 class="card-title">Daftar Kebutuhan Kompetensi &amp; Bahasa</h3><span class="jp-muted" id="jpKompCount">0 item</span></div>
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead><tr><th class="text-center" style="width:50px;">No</th><th>Kompetensi / Bahasa</th><th>Jenis</th><th>Program Studi</th><th class="text-center" style="width:90px;">Aksi</th></tr></thead>
+                                    <tbody id="jpKompBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- JOBPROVIDER 2b: KELOLA LOWONGAN                            -->
+                <!-- ========================================================== -->
+                <div id="view-jp-lowongan" class="view-section">
+                    <header class="top-header">
+                        <div class="header-left"><h1>Kebutuhan Kompetensi</h1><p>Lowongan dan kebutuhan kompetensi Anda; dipakai untuk mencocokkan mahasiswa dan menganalisis kurikulum prodi</p></div>
+                        <div class="header-right">
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfileJp4">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name">Jobprovider</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu"><a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard-body">
+                        <div class="page-tabs view-tabs" role="tablist">
+                            <button type="button" class="tab-btn active" data-view="view-jp-lowongan"><i class="fa-solid fa-briefcase"></i> Lowongan</button>
+                            <button type="button" class="tab-btn" data-view="view-jp-kompetensi"><i class="fa-solid fa-layer-group"></i> Kebutuhan tanpa lowongan</button>
+                        </div>
+                        <div class="charts-grid jp-low-grid">
+                            <div class="chart-card flex-1">
+                                <div class="card-header-flex"><h3 class="card-title" id="jpLowFormTitle">Tambah Lowongan</h3><button type="button" class="jp-btn-sm is-hidden" id="jpLowCancel">Batal Edit</button></div>
+                                <div class="jp-poster">
+                                    <label class="jp-poster-drop" id="jpPosterDrop" for="jpPosterFile">
+                                        <input type="file" id="jpPosterFile" accept="image/*,application/pdf" hidden />
+                                        <span class="jp-poster-ico"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                                        <span class="jp-poster-txt"><strong>Isi otomatis dari poster lowongan</strong><span id="jpPosterStatus">Unggah atau seret gambar / PDF poster (JPG, PNG, PDF). Posisi, prodi, lokasi, kompetensi, dan syarat bahasa terisi otomatis.</span></span>
+                                    </label>
+                                    <div class="jp-poster-result is-hidden" id="jpPosterResult"></div>
+                                </div>
+                                <form id="formJpLowongan" class="jp-form">
+                                    <input type="hidden" id="jpLowId" />
+                                    <div class="jp-field"><label for="jpLowPosisi">Posisi / Jabatan *</label><input id="jpLowPosisi" class="jp-input" type="text" maxlength="120" placeholder="Contoh: Teknisi IoT" required /></div>
+                                    <div class="jp-row">
+                                        <div class="jp-field"><label for="jpLowProdi">Program Studi Target *</label><select id="jpLowProdi" class="jp-input"></select></div>
+                                        <div class="jp-field"><label for="jpLowLokasi">Lokasi</label><input id="jpLowLokasi" class="jp-input" type="text" maxlength="100" placeholder="Contoh: Malang" /></div>
+                                    </div>
+                                    <div class="jp-field">
+                                        <label>Kompetensi yang Dibutuhkan *</label>
+                                        <div class="jp-low-chips" id="jpLowKompChips"></div>
+                                        <div class="jp-low-add">
+                                            <input id="jpLowKompInput" class="jp-input" type="text" maxlength="100" placeholder="Tambah kompetensi lain lalu Enter" />
+                                        </div>
+                                        <small class="jp-hint"><i class="fa-solid fa-floppy-disk"></i> Kompetensi &amp; bahasa baru otomatis disimpan juga ke Kebutuhan Kompetensi Umum.</small>
+                                    </div>
+                                    <div class="jp-field jp-low-lang">
+                                        <label>Persyaratan Bahasa <span class="jm-opt">opsional</span></label>
+                                        <div class="segmented jm-lang-pick" id="jpLLangPick">
+                                                <button type="button" class="seg-btn active" data-lang="Inggris">Inggris</button>
+                                                <button type="button" class="seg-btn" data-lang="Jerman">Jerman</button>
+                                                <button type="button" class="seg-btn" data-lang="Jepang">Jepang</button>
+                                                <button type="button" class="seg-btn" data-lang="__lain">Lainnya</button>
+                                            </div>
+                                            <input type="text" id="jpLLangOther" class="jp-input is-hidden" maxlength="40" placeholder="Tulis bahasa lain, mis. Mandarin, Arab, Korea" />
+                                        <div class="jp-low-lang-row">
+                                            <div class="segmented" id="jpLLangLevel">
+                                                <button type="button" class="seg-btn" data-level="Basic">Basic</button>
+                                                <button type="button" class="seg-btn active" data-level="Intermediate">Intermediate</button>
+                                                <button type="button" class="seg-btn" data-level="Advanced">Advanced</button>
+                                            </div>
+                                            <button type="button" class="jp-btn-sm primary" id="jpLLangAdd"><i class="fa-solid fa-plus"></i> Tambah</button>
+                                        </div>
+                                        <div class="jp-low-chips" id="jpLowLangChips"></div>
+                                    </div>
+                                    <div class="jp-field"><label for="jpLowDesk">Deskripsi Singkat</label><textarea id="jpLowDesk" class="jp-input" rows="3" maxlength="1000" placeholder="Tugas utama dan kualifikasi tambahan (opsional)"></textarea></div>
+                                    <button type="submit" class="btn btn-primary" id="jpLowSubmit"><i class="fa-solid fa-floppy-disk"></i> Simpan Lowongan</button>
+                                </form>
+                            </div>
+                            <div class="table-card flex-2">
+                                <div class="card-header-flex">
+                                    <h3 class="card-title">Daftar Lowongan</h3>
+                                    <div class="segmented" id="jpLowFilter">
+                                        <button type="button" class="seg-btn active" data-status="semua">Semua</button>
+                                        <button type="button" class="seg-btn" data-status="Aktif">Aktif</button>
+                                        <button type="button" class="seg-btn" data-status="Ditutup">Ditutup</button>
+                                    </div>
+                                </div>
+                                <div class="jp-job-list" id="jpLowList"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- JOBPROVIDER 3: REKOMENDASI KANDIDAT                         -->
+                <!-- ========================================================== -->
+                <div id="view-jp-kandidat" class="view-section">
+                    <header class="top-header">
+                        <div class="header-left"><h1>Kandidat &amp; Pelamar</h1><p>Pelamar lowongan Anda dan Jobseeker yang mengizinkan profilnya dilihat, diurutkan menurut kecocokan</p></div>
+                        <div class="header-right">
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfileJp3">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name">Jobprovider</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu"><a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard-body">
+                        <div class="chart-card jp-toolbar">
+                            <div class="jp-field">
+                                <label for="jpFilterLowongan">Dinilai terhadap</label>
+                                <select id="jpFilterLowongan" class="jp-input"></select>
+                            </div>
+                            <div class="jp-field">
+                                <label for="jpFilterProdi">Program Studi</label>
+                                <select id="jpFilterProdi" class="jp-input"></select>
+                            </div>
+                            <div class="jp-field">
+                                <label for="jpFilterSkor">Skor Minimal</label>
+                                <select id="jpFilterSkor" class="jp-input">
+                                    <option value="0">Semua kandidat</option>
+                                    <option value="40">&ge; 40%</option>
+                                    <option value="60" selected>&ge; 60%</option>
+                                    <option value="80">&ge; 80%</option>
+                                </select>
+                            </div>
+                            <label class="jp-toggle"><input type="checkbox" id="jpHanyaPelamar" /> Hanya pelamar</label>
+                            <label class="jp-toggle"><input type="checkbox" id="jpHanyaShortlist" /> Hanya shortlist</label>
+                        </div>
+                        <div class="jp-method-note">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span><strong>Cara skor dihitung:</strong> 40% jika prodi kandidat sesuai + 60% porsi kebutuhan yang terpenuhi. Kompetensi teknis dicocokkan dengan transkrip/sertifikat kandidat (tanpa bukti = 0); persyaratan bahasa dicocokkan dengan kemahiran bahasa kandidat.</span>
+                        </div>
+                        <div class="jp-candidate-grid" id="jpCandidateGrid"></div>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- JOBSEEKER · KOMPETENSI PRODI 1: GAP KOMPETENSI               -->
+                <!-- ========================================================== -->
+                <div id="view-pr-gap" class="view-section">
+                    <header class="top-header">
+                        <div class="header-left"><h1>Gap Kompetensi Prodi</h1><p>Kompetensi yang diminta mitra untuk prodi, dibanding kesiapan mahasiswa prodi (angka gabungan, anonim)</p></div>
+                        <div class="header-right">
+                            <span class="badge badge-blue pr-prodi-chip">-</span>
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfilePr1">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name">Jobseeker</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu"><a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard-body">
+                        <div class="page-tabs view-tabs js-only" role="tablist">
+                            <button type="button" class="tab-btn" data-view="view-pr-rekomendasi"><i class="fa-solid fa-book-open-reader"></i> Yang perlu saya pelajari</button>
+                            <button type="button" class="tab-btn active" data-view="view-pr-gap"><i class="fa-solid fa-users-viewfinder"></i> Gap prodi saya</button>
+                        </div>
+                        <div class="jp-empty-block pr-noprodi is-hidden"><i class="fa-solid fa-graduation-cap"></i>Pilih program studi Anda di <a href="#" class="js-goto" data-goto="view-dashboard">Beranda</a> untuk melihat analisis ini.</div>
+                        <div class="pr-body">
+                        <div class="pr-note is-hidden" id="prDataNote"></div>
+                        <div class="stats-grid">
+                            <div class="stat-card"><div class="stat-icon bg-blue-light"><i class="fa-solid fa-briefcase"></i></div><div class="stat-info"><p class="stat-label">Sumber Kebutuhan Industri</p><h3 class="stat-value" id="prStatSumber">0</h3><p class="stat-desc" id="prStatSumberDesc">lowongan / perusahaan</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-green-light"><i class="fa-solid fa-circle-check"></i></div><div class="stat-info"><p class="stat-label">Keselarasan Prodi</p><h3 class="stat-value" id="prStatIndeks">-</h3><p class="stat-desc" id="prStatMhsDesc">kesiapan mahasiswa prodi</p></div></div>
+                            <div class="stat-card js-only"><div class="stat-icon bg-blue-light"><i class="fa-solid fa-user-check"></i></div><div class="stat-info"><p class="stat-label">Sudah Anda Kuasai</p><h3 class="stat-value" id="prStatAnda">-</h3><p class="stat-desc" id="prStatAndaDesc">dari kompetensi yang diminta</p></div></div>
+                            <div class="stat-card js-only"><div class="stat-icon bg-red-light"><i class="fa-solid fa-book-open-reader"></i></div><div class="stat-info"><p class="stat-label">Perlu Dipelajari</p><h3 class="stat-value" id="prStatBelajar">-</h3><p class="stat-desc"><a href="#" class="pr-goto" data-goto="view-pr-rekomendasi">lihat daftar &rarr;</a></p></div></div>
+                        </div>
+                        <div class="chart-card">
+                            <div class="card-header-flex"><h3 class="card-title">Permintaan Industri vs Kesiapan Mahasiswa Prodi</h3><div class="custom-legend"><div class="legend-item"><div class="dot dot-blue"></div> Permintaan <span class="lbl-mitra">industri</span></div><div class="legend-item"><div class="dot dot-green"></div> Kesiapan mahasiswa prodi</div></div></div>
+                            <div class="canvas-container pr-chart-tall"><canvas id="prGapChart"></canvas><div class="jp-empty is-hidden" id="prGapEmpty">Belum ada kebutuhan industri untuk prodi ini.</div></div>
+                        </div>
+                        <div class="table-card">
+                            <div class="card-header-flex"><h3 class="card-title">Gap Kompetensi Teknis</h3><span class="jp-muted" id="prGapCount">-</span></div>
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead><tr><th>Kompetensi</th><th class="text-center">Permintaan <span class="lbl-mitra">industri</span></th><th class="text-center">Kesiapan Prodi</th><th class="text-center">Gap</th><th>Mata Kuliah Terkait</th><th class="text-center js-only">Anda</th></tr></thead>
+                                    <tbody id="prGapBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="table-card">
+                            <div class="card-header-flex"><h3 class="card-title"><i class="fa-solid fa-language text-blue"></i> Kemahiran Bahasa</h3></div>
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead><tr><th>Bahasa</th><th class="text-center">Tingkat Minimal</th><th class="text-center">Permintaan Industri</th><th class="text-center">Mahasiswa Memenuhi</th><th class="text-center js-only">Anda</th></tr></thead>
+                                    <tbody id="prLangBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="chart-card dsn-only">
+                            <div class="card-header-flex"><h3 class="card-title"><i class="fa-solid fa-building-columns text-blue"></i> Rekomendasi Kurikulum</h3><span class="jp-muted">dihitung otomatis dari gap di atas</span></div>
+                            <div class="pr-rek-list" id="prRekList"></div>
+                        </div>
+                        <details class="jm-method">
+                            <summary><i class="fa-solid fa-circle-info"></i> Bagaimana dihitung?</summary>
+                            <ul>
+                                <li><strong>Sumber kebutuhan industri</strong> = lowongan aktif untuk prodi Anda, ditambah perusahaan yang mengisi kompetensi untuk prodi Anda tetapi belum membuka lowongan.</li>
+                                <li><strong>Permintaan</strong> = jumlah sumber yang meminta kompetensi itu ÷ seluruh sumber.</li>
+                                <li><strong>Kesiapan prodi</strong> = persentase mahasiswa prodi Anda (yang sudah mengunggah transkrip) yang memiliki mata kuliah terkait bernilai &ge; B atau sertifikat terkait. Dihitung di server secara anonim dan baru ditampilkan bila ada minimal 3 mahasiswa.</li>
+                                <li><strong>Gap</strong> = Permintaan − Kesiapan (dalam poin). <strong>Anda</strong> = dihitung dari transkrip, sertifikat, dan bahasa Anda sendiri.</li>
+                            </ul>
+                        </details>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- JOBSEEKER · KOMPETENSI PRODI 2: YANG PERLU DIPELAJARI        -->
+                <!-- ========================================================== -->
+                <div id="view-pr-rekomendasi" class="view-section">
+                    <header class="top-header">
+                        <div class="header-left"><h1>Rencana Belajar</h1><p>Kompetensi yang diminta industri untuk prodi Anda tetapi belum terlihat di transkrip, sertifikat, atau bahasa Anda</p></div>
+                        <div class="header-right">
+                            <span class="badge badge-blue pr-prodi-chip">-</span>
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfilePr2">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name">Jobseeker</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu"><a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard-body">
+                        <div class="page-tabs view-tabs js-only" role="tablist">
+                            <button type="button" class="tab-btn active" data-view="view-pr-rekomendasi"><i class="fa-solid fa-book-open-reader"></i> Yang perlu saya pelajari</button>
+                            <button type="button" class="tab-btn" data-view="view-pr-gap"><i class="fa-solid fa-users-viewfinder"></i> Gap prodi saya</button>
+                        </div>
+                        <div class="jp-empty-block pr-noprodi is-hidden"><i class="fa-solid fa-graduation-cap"></i>Pilih program studi Anda di <a href="#" class="js-goto" data-goto="view-dashboard">Beranda</a> untuk melihat analisis ini.</div>
+                        <div class="pr-body">
+                        <div class="chart-card jm-ai-card">
+                            <div class="card-header-flex"><h3 class="card-title"><i class="fa-solid fa-lightbulb text-blue"></i> Ringkasan untuk Anda</h3><span class="badge badge-blue" id="prAiSource">Ringkasan otomatis</span></div>
+                            <div class="jm-ai-text" id="prAiText"></div>
+                        </div>
+                        <div class="pr-learn-list" id="prLearnList"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- MITRA: PROFIL MITRA                                          -->
+                <!-- ========================================================== -->
+                <div id="view-jp-profil" class="view-section">
+                    <header class="top-header">
+                        <div class="header-left"><h1>Profil Mitra</h1><p>Data mitra dari admin C-DFS, izin penampilan nama, dan keamanan akun</p></div>
+                        <div class="header-right">
+                            
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfileJpPf">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name">Jobprovider</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu"><a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard-body">
+                        <div class="chart-card pf-card">
+                            <div class="pf-row"><span>Nama mitra</span><strong id="jpPfNama">-</strong></div>
+                            <div class="pf-row"><span>Email akun</span><strong id="jpPfEmail">-</strong></div>
+                            <div class="pf-row"><span>Status</span><strong><span class="badge badge-green">Mitra terverifikasi admin</span></strong></div>
+                            <p class="jp-muted" style="margin:10px 0 0">Nama resmi mitra diatur admin. Hubungi admin C-DFS bila ada kesalahan penulisan.</p>
+                        </div>
+                        <label class="chart-card jp-izin" for="jpIzinNama">
+                            <input type="checkbox" id="jpIzinNama" />
+                            <span class="jp-izin-txt"><strong>Izinkan nama perusahaan ditampilkan sebagai mitra C-DFS</strong>
+                                <small>Bila diizinkan, nama perusahaan Anda tampil di Tracer Study (tempat kerja alumni) dan halaman CPL &amp; CPMK mahasiswa. Bila tidak, kebutuhan kompetensi Anda tetap dihitung tanpa nama.</small></span>
+                            <span class="jp-izin-state" id="jpIzinState">Belum diizinkan</span>
+                        </label>
+
+                        <div class="chart-card pf-card"><div class="card-header-flex"><h3 class="card-title"><i class="fa-solid fa-key text-blue"></i> Keamanan Akun</h3><button type="button" class="jp-btn-sm primary js-ganti-pw"><i class="fa-solid fa-key"></i> Ganti Password</button></div></div>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- DOSEN / PRODI: RINGKASAN                                     -->
+                <!-- ========================================================== -->
+                <div id="view-dsn-ringkasan" class="view-section">
+                    <header class="top-header">
+                        <div class="header-left"><h1>Ringkasan Prodi</h1><p>Kebutuhan mitra dibanding kesiapan mahasiswa prodi Anda (angka gabungan, anonim)</p></div>
+                        <div class="header-right">
+                            <span class="badge badge-blue pr-prodi-chip">-</span>
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfileDsn1">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name">Dosen</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu"><a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard-body">
+                        <div class="dsn-privasi"><i class="fa-solid fa-user-shield"></i> Hanya data agregat prodi Anda. Nama dan transkrip mahasiswa tidak ditampilkan.</div>
+                        <div class="pr-note is-hidden" id="dsnNote"></div>
+                        <div class="stats-grid">
+                            <div class="stat-card"><div class="stat-icon bg-green-light"><i class="fa-solid fa-circle-check"></i></div><div class="stat-info"><p class="stat-label">Keselarasan Prodi</p><h3 class="stat-value" id="dsnIdx">-</h3><p class="stat-desc">kebutuhan mitra yang didukung bukti mahasiswa</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-blue-light"><i class="fa-solid fa-building"></i></div><div class="stat-info"><p class="stat-label" id="dsnMitraLbl">Mitra</p><h3 class="stat-value" id="dsnMitra">-</h3><p class="stat-desc">sumber kebutuhan kompetensi</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-orange-light"><i class="fa-solid fa-user-graduate"></i></div><div class="stat-info"><p class="stat-label">Mahasiswa Terdata</p><h3 class="stat-value" id="dsnMhs">-</h3><p class="stat-desc" id="dsnMhsDesc">transkrip terverifikasi (anonim)</p></div></div>
+                            <div class="stat-card"><div class="stat-icon bg-red-light"><i class="fa-solid fa-triangle-exclamation"></i></div><div class="stat-info"><p class="stat-label">Gap Prioritas</p><h3 class="stat-value" id="dsnGapN">-</h3><p class="stat-desc">diminta &ge; 2 mitra, gap &ge; 20 poin</p></div></div>
+                        </div>
+                        <div class="charts-grid">
+                            <div class="chart-card flex-1"><div class="card-header-flex"><h3 class="card-title">Gap Kompetensi Terbesar</h3><a href="#" class="js-goto" data-goto="view-pr-gap">Detail &rarr;</a></div><div id="dsnGap"></div></div>
+                            <div class="chart-card flex-1"><div class="card-header-flex"><h3 class="card-title">Rekomendasi Kurikulum</h3><a href="#" class="js-goto" data-goto="view-pr-gap">Semua &rarr;</a></div><div id="dsnRek"></div></div>
+                        </div>
+                        <!-- Kurikulum: CPL yang dibutuhkan mitra -->
+                        <section class="chart-card cp-dash is-hidden" id="cpDashCard" aria-label="Kurikulum prodi"></section>
+
+                        <div class="chart-card"><div class="card-header-flex"><h3 class="card-title">Tracer Study Alumni</h3><a href="#" class="js-goto" data-goto="view-tracer">Detail &amp; unggah &rarr;</a></div><div id="dsnTracer" class="dsn-tracer"></div></div>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- DOSEN / PRODI: MITRA PRODI                                   -->
+                <!-- ========================================================== -->
+                <div id="view-dsn-mitra" class="view-section">
+                    <header class="top-header">
+                        <div class="header-left"><h1>Mitra Prodi</h1><p>Mitra yang menyampaikan kebutuhan kompetensi untuk prodi Anda</p></div>
+                        <div class="header-right">
+                            <span class="badge badge-blue pr-prodi-chip">-</span>
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfileDsn2">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name">Dosen</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu"><a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard-body">
+                        <div class="dsn-mitra-list" id="dsnMitraList"></div>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- ADMIN: KELOLA AKUN                                           -->
+                <!-- ========================================================== -->
+                <div id="view-adm-akun" class="view-section">
+                    <header class="top-header">
+                        <div class="header-left"><h1>Kelola Akun</h1><p>Akun mitra (Jobprovider) dan dosen dibuat di sini. Mahasiswa mendaftar sendiri dengan email UM.</p></div>
+                        <div class="header-right">
+                            
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfileAdm1">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name">Admin</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu"><a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard-body">
+                        <div class="pr-note is-hidden" id="admNote"></div>
+                        <div class="stats-grid" id="admStats"></div>
+                        <div class="chart-card">
+                            <div class="card-header-flex"><h3 class="card-title">Daftar Akun</h3>
+                                <div class="adm-actions"><button type="button" class="jp-btn-sm primary" id="admNewMitra"><i class="fa-solid fa-building"></i> Akun Mitra</button><button type="button" class="jp-btn-sm primary" id="admNewDosen"><i class="fa-solid fa-chalkboard-user"></i> Akun Dosen</button></div></div>
+                            <div class="table-responsive"><table class="data-table adm-table"><thead><tr><th>Nama</th><th>Email</th><th>Peran</th><th>Instansi / Prodi</th><th class="text-center">Status</th><th class="text-center">Aksi</th></tr></thead><tbody id="admUserBody"></tbody></table></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- ADMIN: PENGAJUAN MITRA                                       -->
+                <!-- ========================================================== -->
+                <div id="view-adm-pengajuan" class="view-section">
+                    <header class="top-header">
+                        <div class="header-left"><h1>Pengajuan Kemitraan</h1><p>Periksa data (NIB perusahaan / NPSN sekolah) sebelum membuat akun mitra</p></div>
+                        <div class="header-right">
+                            
+                            <div class="header-actions">
+                                <div class="user-profile" id="userProfileAdm2">
+                                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                                    <span class="user-name">Admin</span>
+                                    <i class="fa-solid fa-chevron-down" style="font-size:10px; color:var(--text-muted); cursor:pointer;"></i>
+                                    <div class="dropdown-menu"><a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard-body">
+                        <div class="adm-pj-list" id="admPjList"></div>
+                    </div>
+                </div>
+
+                <!-- ========================================================== -->
+                <!-- JOBSEEKER · KOMPETENSI PRODI 3: TREN SKILL                   -->
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal formulir (dipakai: ajukan kemitraan, ganti password, akun admin, CPL/CPMK) -->
+    <div class="cdfs-modal" id="cdfsModal" aria-hidden="true">
+        <div class="cdfs-modal-box" role="dialog" aria-modal="true" aria-labelledby="cdfsModalTitle">
+            <div class="cdfs-modal-head"><h3 id="cdfsModalTitle">-</h3><button type="button" class="cdfs-modal-x" id="cdfsModalX" aria-label="Tutup">&times;</button></div>
+            <p class="cdfs-modal-desc" id="cdfsModalDesc"></p>
+            <form id="cdfsModalForm" novalidate>
+                <div class="cdfs-modal-fields" id="cdfsModalFields"></div>
+                <p class="cdfs-modal-err" id="cdfsModalErr"></p>
+                <div class="cdfs-modal-actions"><button type="button" class="jp-btn-sm" id="cdfsModalCancel">Batal</button><button type="submit" class="jp-btn-sm primary" id="cdfsModalOk">Simpan</button></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-check-circle"></i>
+        <span id="toastMessage">Berhasil diunduh!</span>
+    </div>
+
+    <!-- ================================================================
+    JAVASCRIPT (semua fungsi terintegrasi)
+    ================================================================ -->
+    
+
+    <script src="js/app.js"></script>
+</body>
+</html>
